@@ -300,7 +300,6 @@ namespace EAHT_Monitoring_System
             SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\EAHT_Database.mdf;Integrated Security=True;Connect Timeout=30;");
             SqlDataAdapter sda = new SqlDataAdapter("Select Count(*) From patientDatabase where PatientID='" + IDSearchBox.Text + "'", con);
             DataTable dt = new DataTable();
-            int idForPatient = Convert.ToInt32(IDSearchBox.Text);
 
             sda.Fill(dt);
 
@@ -309,10 +308,11 @@ namespace EAHT_Monitoring_System
                 SqlDataAdapter sda2 = new SqlDataAdapter("Select * From patientDatabase where PatientID='" + IDSearchBox.Text + "'", con);
                 DataTable dt2 = new DataTable();
                 sda2.Fill(dt2);
-                MessageBox.Show("Patinet will be found later");
-                MessageBox.Show("Patient ID: " + dt2.Rows[0][0].ToString() +
-                    " First Name: " + dt2.Rows[0][1].ToString() +
-                    " Last Name: " + dt2.Rows[0][2].ToString());
+                MessageBox.Show("Patient ID: " + dt2.Rows[0][0].ToString() + "\n" +
+                    " First Name: " + dt2.Rows[0][1].ToString() + "\n" +
+                    " Last Name: " + dt2.Rows[0][2].ToString() + "\n" +
+                    " DOB: " + dt2.Rows[0][8].ToString()+ "\n" +
+                    " Diagnosis: "+dt2.Rows[0][9].ToString());
             }
             
             else
