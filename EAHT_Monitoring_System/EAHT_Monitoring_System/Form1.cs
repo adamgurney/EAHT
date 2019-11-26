@@ -94,7 +94,7 @@ namespace EAHT_Monitoring_System
                     }
                     catch (SqlException e)
                     {
-                        //error message
+                        MessageBox.Show(e.Message);
                     }
                     finally
                     {
@@ -102,6 +102,11 @@ namespace EAHT_Monitoring_System
                     }
                 }
             }
+        }
+
+        private void StaffIdLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

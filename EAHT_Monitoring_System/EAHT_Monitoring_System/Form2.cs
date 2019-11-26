@@ -22,6 +22,8 @@ namespace EAHT_Monitoring_System
         //"Bays" button
         private void bays_Click(object sender, EventArgs e)
         {
+            //Removes all the windows of the Notifications Page
+            removeNotificationPage();
             //Removes all the windows of the Database Page
             removeDatabasePage();
             //Removes all the windows of the Search Page
@@ -37,6 +39,8 @@ namespace EAHT_Monitoring_System
         //"Search" button
         private void Search_Click(object sender, EventArgs e)
         {
+            //Removes all the windows of the Notifications Page
+            removeNotificationPage();
             //Removes all the windows of the Bays Page
             this.Controls.Remove(this.baysPatient);
             //Removes all the windows of the Database Page
@@ -54,6 +58,8 @@ namespace EAHT_Monitoring_System
         //"Database" button
         private void database_Click(object sender, EventArgs e)
         {
+            //Removes all the windows of the Notifications Page
+            removeNotificationPage();
            //Removes all the windows of the Bays Page
             this.Controls.Remove(this.baysPatient);
             // Removes all the windows of the Search Page
@@ -72,6 +78,8 @@ namespace EAHT_Monitoring_System
         //"Notification" button
         private void notifications_Click(object sender, EventArgs e)
         {
+            //Adds Notification Page
+            addNotificationsPage();
             // Removes all the windows of the Bays Page
             this.Controls.Remove(this.baysPatient);
             // Removes all the windows of the Database Page
@@ -103,73 +111,22 @@ namespace EAHT_Monitoring_System
         //Add the Bay system used to look at bays
         public void addBaySystem()
         {
+            this.Controls.Add(this.urinePanel);
+            this.Controls.Add(this.temperaturePanel);
+            this.Controls.Add(this.pulseRatePanel);
+            this.Controls.Add(this.bloodPanel);
+            this.Controls.Add(this.patientDetailsTable);
 
-            this.Controls.Add(this.urineOutputLabel);
-            this.Controls.Add(this.urineOutputInt);
-            this.Controls.Add(this.urineOutputBox);
-
-            this.Controls.Add(this.tempratureLabel);
-            this.Controls.Add(this.tempratureInt);
-            this.Controls.Add(this.tempratureBox);
-
-            this.Controls.Add(this.pulseRateInt);
-            this.Controls.Add(this.pulsePic1);
-            this.Controls.Add(this.pulseRateLabel);
-            this.Controls.Add(this.pulseRateBox);
-
-            this.Controls.Add(this.bloodPressureUnit);
-            this.Controls.Add(this.bloodPressureLabel);
-            this.Controls.Add(this.bloodPressureIntDia);
-            this.Controls.Add(this.bloodPressureIntSys);
-            this.Controls.Add(this.bloodPressureIntBox);
-            this.Controls.Add(this.bloodPressureBox);
-
-            this.Controls.Add(this.patientContactsLabel);
-            this.Controls.Add(this.patientDiagnosisLabel);
-            this.Controls.Add(this.patientIDLabel);
-            this.Controls.Add(this.patientDOBLabel);
-            this.Controls.Add(this.patientSurenameLabel);
-            this.Controls.Add(this.patientNameLabel);
-            this.Controls.Add(this.patientPicture);
-            this.Controls.Add(this.patientDetailsBox);
-
-            this.Controls.Add(this.patientDetailsGroupBox);
         }
 
         //Removes the Bay system used to look at bays
         public void removeBaySysytem()
         {
-            this.Controls.Remove(this.urineOutputLabel);
-            this.Controls.Remove(this.urineOutputInt);
-            this.Controls.Remove(this.urineOutputBox);
-
-            this.Controls.Remove(this.tempratureBox);
-            this.Controls.Remove(this.tempratureLabel);
-            this.Controls.Remove(this.tempratureInt);
-
-            this.Controls.Remove(this.pulseRateInt);
-            this.Controls.Remove(this.pulsePic1);
-            this.Controls.Remove(this.pulseRateLabel);
-            this.Controls.Remove(this.pulseRateBox);
-
-            this.Controls.Remove(this.bloodPressureUnit);
-            this.Controls.Remove(this.bloodPressureIntBox);
-            this.Controls.Remove(this.bloodPressureIntDia);
-            this.Controls.Remove(this.bloodPressureIntSys);
-            this.Controls.Remove(this.bloodPressureLabel);
-            this.Controls.Remove(this.bloodPressureBox);
-
-            this.Controls.Remove(this.patientDetailsGroupBox);
-
-            this.Controls.Remove(this.patientContactsLabel);
-            this.Controls.Remove(this.patientDiagnosisLabel);
-            this.Controls.Remove(this.patientIDLabel);
-            this.Controls.Remove(this.patientDOBLabel);
-            this.Controls.Remove(this.patientSurenameLabel);
-            this.Controls.Remove(this.patientNameLabel);
-            this.Controls.Remove(this.patientPicture);
-            this.Controls.Remove(this.patientDetailsBox);
-
+            this.Controls.Remove(this.urinePanel);
+            this.Controls.Remove(this.temperaturePanel);
+            this.Controls.Remove(this.pulseRatePanel);
+            this.Controls.Remove(this.bloodPanel);
+            this.Controls.Remove(this.patientDetailsTable);
         }
 
         private void TextBox14_TextChanged(object sender, EventArgs e)
@@ -298,21 +255,23 @@ namespace EAHT_Monitoring_System
         private void findButton_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\EAHT_Database.mdf;Integrated Security=True;Connect Timeout=30;");
-            SqlDataAdapter sda = new SqlDataAdapter("Select Count(*) From patientDatabase where PatientID='" + IDSearchBox.Text + "'", con);
+            SqlDataAdapter sda = new SqlDataAdapter("Select Count(*) From patientDatabase where PatientID='" + IDSearchBox.Text + "' Or [First Name]='"+ patientSearchigBox.Text +"'", con);
             DataTable dt = new DataTable();
 
             sda.Fill(dt);
 
             if (dt.Rows[0][0].ToString() == "1")
             {
-                SqlDataAdapter sda2 = new SqlDataAdapter("Select * From patientDatabase where PatientID='" + IDSearchBox.Text + "'", con);
+                SqlDataAdapter sda2 = new SqlDataAdapter("Select * From patientDatabase where PatientID='" + IDSearchBox.Text + "' Or [First Name]='" + patientSearchigBox.Text + "'", con);
                 DataTable dt2 = new DataTable();
                 sda2.Fill(dt2);
                 MessageBox.Show("Patient ID: " + dt2.Rows[0][0].ToString() + "\n" +
-                    " First Name: " + dt2.Rows[0][1].ToString() + "\n" +
-                    " Last Name: " + dt2.Rows[0][2].ToString() + "\n" +
-                    " DOB: " + dt2.Rows[0][8].ToString()+ "\n" +
-                    " Diagnosis: "+dt2.Rows[0][9].ToString());
+                    "First Name: " + dt2.Rows[0][1].ToString() + "\n" +
+                    "Last Name: " + dt2.Rows[0][2].ToString() + "\n" +
+                    "Bay No: "+dt2.Rows[0][11].ToString()+"\n"+
+                    "Patient No "+dt2.Rows[0][12].ToString()+"\n"+
+                    "DOB: " + dt2.Rows[0][8].ToString()+ "\n" +
+                    "Diagnosis: "+dt2.Rows[0][9].ToString());
             }
             
             else
@@ -470,11 +429,26 @@ namespace EAHT_Monitoring_System
             this.Controls.Remove(this.bay1Box);
         }
 
-        private void searchingPatient()
+        private void NotificationsList_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
+        private void addNotificationsPage()
+        {
+            this.Controls.Add(this.notificationsList);
+            this.Controls.Add(this.notificationsLabel);
+        }
 
+        private void removeNotificationPage()
+        {
+             this.Controls.Remove(this.notificationsList);
+             this.Controls.Remove(this.notificationsLabel);
+        }
+
+        private void TableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
