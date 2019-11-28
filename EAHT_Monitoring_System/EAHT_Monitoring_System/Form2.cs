@@ -116,7 +116,6 @@ namespace EAHT_Monitoring_System
             this.Controls.Add(this.pulseRatePanel);
             this.Controls.Add(this.bloodPanel);
             this.Controls.Add(this.patientDetailsTable);
-
         }
 
         //Removes the Bay system used to look at bays
@@ -447,6 +446,26 @@ namespace EAHT_Monitoring_System
         }
 
         private void TableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void DOB_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void StaffID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Position_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Contacts_Click(object sender, EventArgs e)
         {
 
         }

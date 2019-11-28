@@ -119,7 +119,7 @@
             this.notificationsList = new System.Windows.Forms.ListView();
             this.Notification = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TimeReceived = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.patientBox = new System.Windows.Forms.PictureBox();
             this.buttonsPanel = new System.Windows.Forms.TableLayoutPanel();
             this.exitButton = new System.Windows.Forms.Button();
             this.notificationsLabel = new System.Windows.Forms.Label();
@@ -134,7 +134,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.bay1Box.SuspendLayout();
             this.bay2Box.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientBox)).BeginInit();
             this.buttonsPanel.SuspendLayout();
             this.patientDetailsTable.SuspendLayout();
             this.bloodPanel.SuspendLayout();
@@ -165,7 +165,7 @@
             this.name.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.name.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(175)))), ((int)(((byte)(216)))));
-            this.name.Location = new System.Drawing.Point(11, 175);
+            this.name.Location = new System.Drawing.Point(11, 179);
             this.name.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(45, 19);
@@ -179,7 +179,7 @@
             this.surname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.surname.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.surname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(175)))), ((int)(((byte)(216)))));
-            this.surname.Location = new System.Drawing.Point(11, 194);
+            this.surname.Location = new System.Drawing.Point(11, 198);
             this.surname.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.surname.Name = "surname";
             this.surname.Size = new System.Drawing.Size(64, 19);
@@ -193,12 +193,13 @@
             this.DOB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.DOB.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DOB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(175)))), ((int)(((byte)(216)))));
-            this.DOB.Location = new System.Drawing.Point(11, 213);
+            this.DOB.Location = new System.Drawing.Point(11, 217);
             this.DOB.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.DOB.Name = "DOB";
             this.DOB.Size = new System.Drawing.Size(36, 19);
             this.DOB.TabIndex = 3;
             this.DOB.Text = "DOB: ";
+            this.DOB.Click += new System.EventHandler(this.DOB_Click);
             // 
             // staffID
             // 
@@ -206,12 +207,13 @@
             this.staffID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.staffID.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.staffID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(175)))), ((int)(((byte)(216)))));
-            this.staffID.Location = new System.Drawing.Point(11, 232);
+            this.staffID.Location = new System.Drawing.Point(11, 236);
             this.staffID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.staffID.Name = "staffID";
             this.staffID.Size = new System.Drawing.Size(54, 19);
             this.staffID.TabIndex = 4;
             this.staffID.Text = "Staff ID: ";
+            this.staffID.Click += new System.EventHandler(this.StaffID_Click);
             // 
             // position
             // 
@@ -219,12 +221,13 @@
             this.position.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.position.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.position.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(175)))), ((int)(((byte)(216)))));
-            this.position.Location = new System.Drawing.Point(11, 251);
+            this.position.Location = new System.Drawing.Point(11, 255);
             this.position.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.position.Name = "position";
             this.position.Size = new System.Drawing.Size(56, 19);
             this.position.TabIndex = 5;
             this.position.Text = "Position: ";
+            this.position.Click += new System.EventHandler(this.Position_Click);
             // 
             // database
             // 
@@ -277,12 +280,13 @@
             this.contacts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.contacts.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contacts.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(175)))), ((int)(((byte)(216)))));
-            this.contacts.Location = new System.Drawing.Point(11, 270);
+            this.contacts.Location = new System.Drawing.Point(11, 274);
             this.contacts.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.contacts.Name = "contacts";
             this.contacts.Size = new System.Drawing.Size(62, 19);
             this.contacts.TabIndex = 11;
             this.contacts.Text = "Contacts: ";
+            this.contacts.Click += new System.EventHandler(this.Contacts_Click);
             // 
             // baysPatient
             // 
@@ -1001,15 +1005,15 @@
             this.TimeReceived.Text = "Time Received";
             this.TimeReceived.Width = 250;
             // 
-            // pictureBox1
+            // patientBox
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(179, 661);
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
+            this.patientBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
+            this.patientBox.Dock = System.Windows.Forms.DockStyle.Left;
+            this.patientBox.Location = new System.Drawing.Point(0, 0);
+            this.patientBox.Name = "patientBox";
+            this.patientBox.Size = new System.Drawing.Size(179, 661);
+            this.patientBox.TabIndex = 13;
+            this.patientBox.TabStop = false;
             // 
             // buttonsPanel
             // 
@@ -1067,7 +1071,7 @@
             this.patientDetailsTable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(37)))), ((int)(((byte)(67)))));
             this.patientDetailsTable.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.patientDetailsTable.ColumnCount = 1;
-            this.patientDetailsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 227F));
+            this.patientDetailsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 229F));
             this.patientDetailsTable.Controls.Add(this.patientNameLabel, 0, 1);
             this.patientDetailsTable.Controls.Add(this.patientSurenameLabel, 0, 2);
             this.patientDetailsTable.Controls.Add(this.patientDOBLabel, 0, 3);
@@ -1181,7 +1185,7 @@
             this.Controls.Add(this.DOB);
             this.Controls.Add(this.surname);
             this.Controls.Add(this.name);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.patientBox);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form2";
             this.Text = "Monitoring System";
@@ -1191,7 +1195,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.bay1Box.ResumeLayout(false);
             this.bay2Box.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientBox)).EndInit();
             this.buttonsPanel.ResumeLayout(false);
             this.patientDetailsTable.ResumeLayout(false);
             this.patientDetailsTable.PerformLayout();
@@ -1280,7 +1284,7 @@
         private System.Windows.Forms.ListView notificationsList;
         private System.Windows.Forms.ColumnHeader Notification;
         private System.Windows.Forms.ColumnHeader TimeReceived;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox patientBox;
         private System.Windows.Forms.TableLayoutPanel buttonsPanel;
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Label notificationsLabel;
