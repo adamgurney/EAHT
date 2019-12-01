@@ -71,9 +71,15 @@ namespace EAHT_Monitoring_System
             }
         }
 
+        /// <summary>
+        /// LinkLabel of user forgot login detals
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ForgotPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            MessageBox.Show("Please contact with hospital management team");
+            //It won't send any instructions but to contact to the managament team
+            MessageBox.Show("Please contact with the hospital management team");
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
