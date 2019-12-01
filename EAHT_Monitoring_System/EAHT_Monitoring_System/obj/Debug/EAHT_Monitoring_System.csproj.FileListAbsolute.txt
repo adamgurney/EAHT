@@ -165,3 +165,16 @@ K:\EAHT-master\EAHT-master\EAHT_Monitoring_System\EAHT_Monitoring_System\obj\Deb
 K:\EAHT-master\EAHT-master\EAHT_Monitoring_System\EAHT_Monitoring_System\obj\Debug\EAHT_Monitoring_System.csproj.CoreCompileInputs.cache
 K:\EAHT-master\EAHT-master\EAHT_Monitoring_System\EAHT_Monitoring_System\obj\Debug\EAHT_Monitoring_System.exe
 K:\EAHT-master\EAHT-master\EAHT_Monitoring_System\EAHT_Monitoring_System\obj\Debug\EAHT_Monitoring_System.pdb
+C:\Users\Almaz A\Downloads\EAHT-master\EAHT-master\EAHT_Monitoring_System\EAHT_Monitoring_System\bin\Debug\EAHT_Database.mdf
+C:\Users\Almaz A\Downloads\EAHT-master\EAHT-master\EAHT_Monitoring_System\EAHT_Monitoring_System\bin\Debug\EAHT_Database_log.ldf
+C:\Users\Almaz A\Downloads\EAHT-master\EAHT-master\EAHT_Monitoring_System\EAHT_Monitoring_System\bin\Debug\EAHT_Monitoring_System.exe.config
+C:\Users\Almaz A\Downloads\EAHT-master\EAHT-master\EAHT_Monitoring_System\EAHT_Monitoring_System\bin\Debug\EAHT_Monitoring_System.exe
+C:\Users\Almaz A\Downloads\EAHT-master\EAHT-master\EAHT_Monitoring_System\EAHT_Monitoring_System\bin\Debug\EAHT_Monitoring_System.pdb
+C:\Users\Almaz A\Downloads\EAHT-master\EAHT-master\EAHT_Monitoring_System\EAHT_Monitoring_System\obj\Debug\EAHT_Monitoring_System.csprojAssemblyReference.cache
+C:\Users\Almaz A\Downloads\EAHT-master\EAHT-master\EAHT_Monitoring_System\EAHT_Monitoring_System\obj\Debug\EAHT_Monitoring_System.Form1.resources
+C:\Users\Almaz A\Downloads\EAHT-master\EAHT-master\EAHT_Monitoring_System\EAHT_Monitoring_System\obj\Debug\EAHT_Monitoring_System.Form2.resources
+C:\Users\Almaz A\Downloads\EAHT-master\EAHT-master\EAHT_Monitoring_System\EAHT_Monitoring_System\obj\Debug\EAHT_Monitoring_System.Form3.resources
+C:\Users\Almaz A\Downloads\EAHT-master\EAHT-master\EAHT_Monitoring_System\EAHT_Monitoring_System\obj\Debug\EAHT_Monitoring_System.Properties.Resources.resources
+C:\Users\Almaz A\Downloads\EAHT-master\EAHT-master\EAHT_Monitoring_System\EAHT_Monitoring_System\obj\Debug\EAHT_Monitoring_System.csproj.GenerateResource.cache
+C:\Users\Almaz A\Downloads\EAHT-master\EAHT-master\EAHT_Monitoring_System\EAHT_Monitoring_System\obj\Debug\EAHT_Monitoring_System.exe
+C:\Users\Almaz A\Downloads\EAHT-master\EAHT-master\EAHT_Monitoring_System\EAHT_Monitoring_System\obj\Debug\EAHT_Monitoring_System.pdb
